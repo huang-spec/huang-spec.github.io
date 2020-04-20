@@ -1,1 +1,20 @@
 http://www.j-product.com
+ping j-product.com
+185.199.111.153
+nslookup
+set type=ns
+j-product.com
+
+ns1.dnsowl.com
+ns2.dnsowl.com
+ns3.dnsowl.com
+
+
+ping huang-spec.github.io
+185.199.108.153
+
+nslookup
+set type=ns
+huang-spec.github.io
+
+ns1.p16.dynect.net
