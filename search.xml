@@ -5,8 +5,8 @@
     <url>/2020/04/19/download/</url>
     <content><![CDATA[<h3 id="明确目标"><a href="#明确目标" class="headerlink" title="明确目标"></a>明确目标</h3><p>–爬取top250电影的（序号、电影名称、评分、推荐语、链接），并按分类存储</p>
 <h3 id="需求说明"><a href="#需求说明" class="headerlink" title="需求说明"></a>需求说明</h3><p>–方便本地随时查看，并结合TOP前250电影数据分析策略的影响面，持续优化可调整权重；<br>–提升用户增长指数</p>
-<h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><p>–1.0版本获取数据，并打印；<br>–2.0版本在1.0版上新增excel存储</p>
 <a id="more"></a>
+<h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><p>–1.0版本获取数据，并打印；<br>–2.0版本在1.0版上新增excel存储</p>
 <h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><p><img src="/images/liuchengtu.jpg" alt="(可以写关于图片的描述)"></p>
 <h3 id="1-0–打印文本"><a href="#1-0–打印文本" class="headerlink" title="1.0–打印文本"></a>1.0–打印文本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(10):</span><br><span class="line">    headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'</span>&#125;  </span><br><span class="line">    url_1=<span class="string">'https://movie.douban.com/top250?start='</span>+str(x*25)+<span class="string">'&amp;filter='</span></span><br><span class="line">    res=requests.get(url_1,headers=headers)</span><br><span class="line">    soup = BeautifulSoup(res.text,<span class="string">'html.parser'</span>)</span><br><span class="line">    items = soup.find(<span class="string">'ol'</span>,class_=<span class="string">"grid_view"</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> items.find_all(<span class="string">'li'</span>):</span><br><span class="line">        xuhao = i.find(<span class="string">'em'</span>,class_=<span class="string">""</span>).text</span><br><span class="line">        dym = i.find(<span class="string">'span'</span>,class_=<span class="string">"title"</span>).text</span><br><span class="line">        pf = i.find(<span class="string">'span'</span>,property=<span class="string">"v:average"</span>).text       </span><br><span class="line">        url = i.find(<span class="string">'a'</span>)[<span class="string">'href'</span>]</span><br><span class="line">        <span class="keyword">if</span> i.find(<span class="string">'span'</span>,class_=<span class="string">"inq"</span>) !=None:</span><br><span class="line">            tjy = i.find(<span class="string">'span'</span>,class_=<span class="string">"inq"</span>).text</span><br><span class="line">            <span class="built_in">print</span>(xuhao+<span class="string">'.'</span>+dym+<span class="string">'--'</span>+pf+<span class="string">'\n'</span>+<span class="string">'推荐语:'</span>+tjy+<span class="string">'\n'</span>+url)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'----------------------'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(xuhao+<span class="string">'.'</span>+dym+<span class="string">'--'</span>+pf+<span class="string">'\n'</span>+url)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'----------------------'</span>)</span><br></pre></td></tr></table></figure>
 
@@ -23,37 +23,50 @@
       </tags>
   </entry>
   <entry>
+    <title>自动测单词工具</title>
+    <url>/2020/04/21/test/</url>
+    <content><![CDATA[<h3 id="用Python实现自动测单词"><a href="#用Python实现自动测单词" class="headerlink" title="用Python实现自动测单词"></a>用Python实现自动测单词</h3><video src="http://q95nj04n6.bkt.clouddn.com/cendanci.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+your browser does not support the video tag
+</video>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>产品模式进化之-PMF</title>
     <url>/2020/04/21/xiaojie/</url>
-    <content><![CDATA[<h3 id="产品模式的进化"><a href="#产品模式的进化" class="headerlink" title="产品模式的进化"></a>产品模式的进化</h3><p>五年前的产品模式<br>![(可以写关于图片的描述)](/images/Five years ago.jpg)</p>
-<p>近几年的产品模式<br>![(可以写关于图片的描述)](/images/in recent years.jpg)</p>
-<p>最近开始的产品模式<br>![(可以写关于图片的描述)](/images/these two years.jpg)</p>
-<p>–爬取top250电影的（序号、电影名称、评分、推荐语、链接），并按分类存储</p>
-<h3 id="什么是PMF？"><a href="#什么是PMF？" class="headerlink" title="什么是PMF？"></a>什么是PMF？</h3><p>Product-Market Fit(PMF)是由马克•安德森在2007年提出的概念：产品和市场的匹配度(fit)；<br>![(可以写关于图片的描述)](/images/Product-Market Fit.jpg)</p>
+    <content><![CDATA[<h3 id="产品模式的进化"><a href="#产品模式的进化" class="headerlink" title="产品模式的进化"></a>产品模式的进化</h3><p>随着市场的演变和变迁，产品之旅也在不断升级，寻求与之匹配且符合市场发展规律的产品模式至关重要，本文主要探讨产品模式进化下PMF的重要性及对市场的匹配程度验证分析，以<font color="#FF0000">最小时间成本</font> 快速验证市场的fit</p>
+<p>五年前的产品模式</p>
+<a id="more"></a>
+<p><img src="/images/3666.jpg" alt="(可以写关于图片的描述)"></p>
+<p>近几年的产品模式</p>
+<p><img src="/images/36.png" alt="(可以写关于图片的描述)"></p>
+<p>最近开始的产品模式</p>
+<p><img src="/images/39.png" alt="(可以写关于图片的描述)"></p>
+<h3 id="什么是PMF呢"><a href="#什么是PMF呢" class="headerlink" title="什么是PMF呢"></a>什么是PMF呢</h3><p>Product-Market Fit(PMF)是由马克•安德森在2007年提出的概念：产品和市场的匹配度(fit)；</p>
+<p><img src="/images/11.png" alt="(可以写关于图片的描述)"></p>
+<h3 id="PMF在产品模式中决定性作用是什么"><a href="#PMF在产品模式中决定性作用是什么" class="headerlink" title="PMF在产品模式中决定性作用是什么"></a>PMF在产品模式中决定性作用是什么</h3><p>在PMF阶段，通过市场分析和竞品分析来验证、判断idea是否有价值；<br>–在人的一生中，我们会有无数的想法和idea，那么，如何判断idea在市场的认可程度？解决方案在市场是如何的？在行业的产业地图中上下游关系是怎样的，  往往我们不深入了解，市场的格局形态是不清楚的。<br>–面对市场上形形色色的产品，我们想做的产品，很可能在市场存在竞争对手，直接、间接竞争对手的产品核心优势与“我的想法”核心优势分别是什么？典型用户是怎么用这个产品的？效益和风险有哪些？，我们该如何利用目前的优势在市场中占一席之地。</p>
+<h3 id="用案例说明PMF的影响程度"><a href="#用案例说明PMF的影响程度" class="headerlink" title="用案例说明PMF的影响程度"></a>用案例说明PMF的影响程度</h3><h4 id="1、产品脱离市场"><a href="#1、产品脱离市场" class="headerlink" title="1、产品脱离市场"></a>1、产品脱离市场</h4><p>产品脱离市场，很大因素是因为产品很强而市场很小</p>
+<p><img src="/images/222.png" alt="(可以写关于图片的描述)"></p>
+<p>如：<br>Color：弹性社交（照片分享后附近可见，临时成组，到点解散）<br>meerkat：直播，在映客之前就存在<br>微米：知识付费，直播，群组<br><font color="#FF0000"> 很多时候，产品本身很强大，但市场时机不对，市场容量狭窄，导致产品很难存活下来</font> </p>
+<h4 id="2、产品被市场套牢"><a href="#2、产品被市场套牢" class="headerlink" title="2、产品被市场套牢"></a>2、产品被市场套牢</h4><p>产品匹配现在的市场，但与新鲜市场不匹配</p>
+<p><img src="/images/333.png" alt="(可以写关于图片的描述)"></p>
+<p>如：<br>MSN：用户在APP急剧增长，而MSN在产品很弱<br>柯达：传统胶片相机，拍照效果好，但当时胶片市场已经萎缩，但数码相机随技术越来越好，柯达没有抓住数码市场<br>人人网：用户已经迁移到微博微信APP上，人人网随校友关系萎缩而萎缩</p>
+<p><font color="#FF0000"> 选择一个良性的市场远强过于追求功能上的强大，找到市场对产品的认可程度在哪个时间点都尤其重要</font> </p>
+<h4 id="3、成功的PMF案例"><a href="#3、成功的PMF案例" class="headerlink" title="3、成功的PMF案例"></a>3、成功的PMF案例</h4><p>陌陌：2015年直播刚起来，<font color="#FF0000">陌陌直播</font> 红利快速推出<font color="#FF0000">哈你直播</font> ，通过<font color="#FF0000">陌陌直播</font>给<font color="#FF0000">哈你直播</font>导流<br><font color="#FF0000"> 2016年流量成本急剧下降，抓住直播风口</font> </p>
+<h3 id="如何判断PMF临界点"><a href="#如何判断PMF临界点" class="headerlink" title="如何判断PMF临界点"></a>如何判断PMF临界点</h3><p>留存：30%的新用户次日留存<br>新增用户DAU：大于100（存疑，数值太小）<br>用户数：10万用户数<br><font color="#FF0000"> 不断有新用户接受新的产品，用户数大，新增用户越快速，留存越来越高</font> </p>
+<h3 id="PMF-三种类型"><a href="#PMF-三种类型" class="headerlink" title="PMF 三种类型"></a>PMF 三种类型</h3><h4 id="更好体验的产品"><a href="#更好体验的产品" class="headerlink" title="更好体验的产品"></a>更好体验的产品</h4><p>Slack：比起市场的项目工具Slack用新方式重构了内部协作的沟通方式，用聊天的方式重组内部信息流。<br>tower：内部管理工具，提供简单简洁的项目管理<br>美图秀秀：图片处理傻瓜化</p>
+<h4 id="抓住细分市场"><a href="#抓住细分市场" class="headerlink" title="抓住细分市场"></a>抓住细分市场</h4><p>uber：商务租车，电话派车，uber做APP解决黑车正规化<br>P2P：银行做企业信贷，个人信贷较少，P2P做个人信贷，存款利息的提升</p>
+<h4 id="全新的市场"><a href="#全新的市场" class="headerlink" title="全新的市场"></a>全新的市场</h4><p>微博的@、探探的左滑右滑</p>
+<h4 id="综合体"><a href="#综合体" class="headerlink" title="综合体"></a>综合体</h4><p>还有很特殊的一中综合体，如airbnb，在全新市场提供更好的产品，在其他民宿产品体验上更好，市面上全新的市场，使民宿正规化，每个人都可以分享自己的空余房间，符合上面1和3</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>PMF是一个需要不断探索、试验的过程，我们能在快速探索和试验的过程中找到产品与市场的匹配程度，以及验证产品可行性，从而进入MVP最小可行产品，通过PMF+MVP相互配合可得到一系列<font color="#FF0000">可行的、跟市场匹配的产品</font> 。</p>
 ]]></content>
       <categories>
         <category>产品的发展规律</category>
       </categories>
-  </entry>
-  <entry>
-    <title>需求：自动测单词工具</title>
-    <url>/2020/04/21/test/</url>
-    <content><![CDATA[<h3 id="明确目标"><a href="#明确目标" class="headerlink" title="明确目标"></a>明确目标</h3><p>–爬取top250电影的（序号、电影名称、评分、推荐语、链接），并按分类存储</p>
-<h3 id="需求说明"><a href="#需求说明" class="headerlink" title="需求说明"></a>需求说明</h3><p>–方便本地随时查看，并结合TOP前250电影数据分析策略的影响面，持续优化可调整权重；<br>–提升用户增长指数</p>
-<h3 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h3><p>–1.0版本获取数据，并打印；<br>–2.0版本在1.0版上新增excel存储</p>
-<a id="more"></a>
-<h3 id="流程图"><a href="#流程图" class="headerlink" title="流程图"></a>流程图</h3><p><img src="/images/liuchengtu.jpg" alt="(可以写关于图片的描述)"></p>
-<h3 id="1-0–打印文本"><a href="#1-0–打印文本" class="headerlink" title="1.0–打印文本"></a>1.0–打印文本</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(10):</span><br><span class="line">    headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'</span>&#125;  </span><br><span class="line">    url_1=<span class="string">'https://movie.douban.com/top250?start='</span>+str(x*25)+<span class="string">'&amp;filter='</span></span><br><span class="line">    res=requests.get(url_1,headers=headers)</span><br><span class="line">    soup = BeautifulSoup(res.text,<span class="string">'html.parser'</span>)</span><br><span class="line">    items = soup.find(<span class="string">'ol'</span>,class_=<span class="string">"grid_view"</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> items.find_all(<span class="string">'li'</span>):</span><br><span class="line">        xuhao = i.find(<span class="string">'em'</span>,class_=<span class="string">""</span>).text</span><br><span class="line">        dym = i.find(<span class="string">'span'</span>,class_=<span class="string">"title"</span>).text</span><br><span class="line">        pf = i.find(<span class="string">'span'</span>,property=<span class="string">"v:average"</span>).text       </span><br><span class="line">        url = i.find(<span class="string">'a'</span>)[<span class="string">'href'</span>]</span><br><span class="line">        <span class="keyword">if</span> i.find(<span class="string">'span'</span>,class_=<span class="string">"inq"</span>) !=None:</span><br><span class="line">            tjy = i.find(<span class="string">'span'</span>,class_=<span class="string">"inq"</span>).text</span><br><span class="line">            <span class="built_in">print</span>(xuhao+<span class="string">'.'</span>+dym+<span class="string">'--'</span>+pf+<span class="string">'\n'</span>+<span class="string">'推荐语:'</span>+tjy+<span class="string">'\n'</span>+url)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'----------------------'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="built_in">print</span>(xuhao+<span class="string">'.'</span>+dym+<span class="string">'--'</span>+pf+<span class="string">'\n'</span>+url)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'----------------------'</span>)</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-0-文本输出"><a href="#1-0-文本输出" class="headerlink" title="1.0-文本输出"></a>1.0-文本输出</h3><p><img src="/images/image.png" alt="(可以写关于图片的描述)"></p>
-<h3 id="2-0-Excel存储"><a href="#2-0-Excel存储" class="headerlink" title="2.0-Excel存储"></a>2.0-Excel存储</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ import requests,openpyxl</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"></span><br><span class="line">wb=openpyxl.Workbook()</span><br><span class="line"><span class="comment">#创建工作簿</span></span><br><span class="line">sheet=wb.active</span><br><span class="line"><span class="comment">#获取工作簿的活动表</span></span><br><span class="line">sheet.title=<span class="string">'豆瓣TOP250'</span></span><br><span class="line"><span class="comment">#工作表重命名</span></span><br><span class="line"></span><br><span class="line">sheet[<span class="string">'A1'</span>] =<span class="string">'序号'</span>     <span class="comment">#加表头，给A1单元格赋值</span></span><br><span class="line">sheet[<span class="string">'B1'</span>] =<span class="string">'电影名称'</span>   <span class="comment">#加表头，给B1单元格赋值</span></span><br><span class="line">sheet[<span class="string">'C1'</span>] =<span class="string">'评分'</span>   <span class="comment">#加表头，给C1单元格赋值</span></span><br><span class="line">sheet[<span class="string">'D1'</span>] =<span class="string">'推荐语'</span>   <span class="comment">#加表头，给D1单元格赋值</span></span><br><span class="line">sheet[<span class="string">'E1'</span>] =<span class="string">'电影链接'</span>   <span class="comment">#加表头，给E1单元格赋值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(10):</span><br><span class="line">    headers = &#123;<span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36'</span>&#125;  </span><br><span class="line">    url_1=<span class="string">'https://movie.douban.com/top250?start='</span>+str(x*25)+<span class="string">'&amp;filter='</span></span><br><span class="line">    res=requests.get(url_1,headers=headers)</span><br><span class="line">    soup = BeautifulSoup(res.text,<span class="string">'html.parser'</span>)</span><br><span class="line">    items = soup.find(<span class="string">'ol'</span>,class_=<span class="string">"grid_view"</span>)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> items.find_all(<span class="string">'li'</span>):</span><br><span class="line">        xuhao = i.find(<span class="string">'em'</span>,class_=<span class="string">""</span>).text</span><br><span class="line">        dym = i.find(<span class="string">'span'</span>,class_=<span class="string">"title"</span>).text</span><br><span class="line">        pf = i.find(<span class="string">'span'</span>,property=<span class="string">"v:average"</span>).text       </span><br><span class="line">        url = i.find(<span class="string">'a'</span>)[<span class="string">'href'</span>]</span><br><span class="line">        <span class="keyword">if</span> i.find(<span class="string">'span'</span>,class_=<span class="string">"inq"</span>) !=None:</span><br><span class="line">            tjy = i.find(<span class="string">'span'</span>,class_=<span class="string">"inq"</span>).text</span><br><span class="line">            sheet.append([xuhao,dym,pf,tjy,url])</span><br><span class="line">            <span class="built_in">print</span>(xuhao+<span class="string">'.'</span>+dym+<span class="string">'--'</span>+pf+<span class="string">'\n'</span>+<span class="string">'推荐语:'</span>+tjy+<span class="string">'\n'</span>+url)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'----------------------'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            sheet.append([xuhao,dym,pf,<span class="string">''</span>,url])</span><br><span class="line">            <span class="built_in">print</span>(xuhao+<span class="string">'.'</span>+dym+<span class="string">'--'</span>+pf+<span class="string">'\n'</span>+url)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">'----------------------'</span>)</span><br><span class="line">wb.save(<span class="string">'豆瓣TOP250.xlsx'</span>) </span><br><span class="line"><span class="comment">#保存并命名Excel文件</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-0-输出Excel存储"><a href="#2-0-输出Excel存储" class="headerlink" title="2.0-输出Excel存储"></a>2.0-输出Excel存储</h3><p><img src="/images/cunchu.gif" alt="(可以写关于图片的描述)"></p>
-]]></content>
-      <categories>
-        <category>产品案例</category>
-      </categories>
-      <tags>
-        <tag>产品需求</tag>
-      </tags>
   </entry>
 </search>
