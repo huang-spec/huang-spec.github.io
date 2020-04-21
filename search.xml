@@ -23,20 +23,6 @@
       </tags>
   </entry>
   <entry>
-    <title>自动测单词工具</title>
-    <url>/2020/04/21/test/</url>
-    <content><![CDATA[<h3 id="用Python实现自动测单词"><a href="#用Python实现自动测单词" class="headerlink" title="用Python实现自动测单词"></a>用Python实现自动测单词</h3><div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe 
-src="http://q95nj04n6.bkt.clouddn.com/cendanci.mp4" scrolling="no" border="0" 
-frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; 
-height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>产品模式进化之-PMF</title>
     <url>/2020/04/21/xiaojie/</url>
     <content><![CDATA[<h3 id="产品模式的进化"><a href="#产品模式的进化" class="headerlink" title="产品模式的进化"></a>产品模式的进化</h3><p>随着市场的演变和变迁，产品之旅也在不断升级，寻求与之匹配且符合市场发展规律的产品模式至关重要，本文主要探讨产品模式进化下PMF的重要性及对市场的匹配程度验证分析，以<font color="#FF0000">最小时间成本</font> 快速验证市场的fit</p>
@@ -68,5 +54,18 @@ height: 100%; left: 0; top: 0;"> </iframe></div>]]></content>
       <categories>
         <category>产品的发展规律</category>
       </categories>
+  </entry>
+  <entry>
+    <title>自动测单词工具</title>
+    <url>/2020/04/21/test/</url>
+    <content><![CDATA[<h3 id="用Python实现自动测单词"><a href="#用Python实现自动测单词" class="headerlink" title="用Python实现自动测单词"></a>用Python实现自动测单词</h3><video src="http://q95nj04n6.bkt.clouddn.com/cendanci.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+your browser does not support the video tag
+</video>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
   </entry>
 </search>
