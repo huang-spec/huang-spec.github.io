@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>自动测单词工具</title>
+    <url>/2020/04/21/test/</url>
+    <content><![CDATA[<h3 id="用Python实现自动测单词"><a href="#用Python实现自动测单词" class="headerlink" title="用Python实现自动测单词"></a>用Python实现自动测单词</h3><p><font color="#FF0000"> 1、建议用火狐浏览器打开</font><br><font color="#FF0000"> 2、Google浏览器无法直接打开，可以复制视频链接至任意浏览器打开</font> </p>
+<video src="http://q95nj04n6.bkt.clouddn.com/cendanci.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
+</video>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>豆瓣TOP250电影下载并存储</title>
     <url>/2020/04/19/download/</url>
     <content><![CDATA[<h3 id="明确目标"><a href="#明确目标" class="headerlink" title="明确目标"></a>明确目标</h3><p>–爬取top250电影的（序号、电影名称、评分、推荐语、链接），并按分类存储</p>
@@ -18,21 +31,8 @@
         <category>产品案例</category>
       </categories>
       <tags>
+        <tag>Python</tag>
         <tag>产品需求</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>自动测单词工具</title>
-    <url>/2020/04/21/test/</url>
-    <content><![CDATA[<h3 id="用Python实现自动测单词"><a href="#用Python实现自动测单词" class="headerlink" title="用Python实现自动测单词"></a>用Python实现自动测单词</h3><p><font color="#FF0000"> 1、建议用火狐浏览器打开</font><br><font color="#FF0000"> 2、Google浏览器无法直接打开，可以复制视频链接至任意浏览器打开</font> </p>
-<video src="http://q95nj04n6.bkt.clouddn.com/cendanci.mp4" controls="controls" style="max-width: 100%; display: block; margin-left: auto; margin-right: auto;">
-</video>]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
